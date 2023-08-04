@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.IO;
+using System.Runtime.Remoting.Channels;
 using System.Windows.Forms;
 
 namespace ASCII_Art
@@ -55,18 +56,17 @@ namespace ASCII_Art
             }
         }
 
+
         private void btnConvertToASCII_Click(object sender, EventArgs e)
         {
             MonochromaticASCII monochromaticASCII = new MonochromaticASCII();
-            
-            //monochromaticASCII.BtnConvertToMonochromaticASCII_Click(sender, e);
 
             btnConvertToASCII.Enabled = false;
-            //Bitmap image = new Bitmap(monochromaticASCII.textPath.Text, true);
             Bitmap image = new Bitmap(textPath.Text, true);
             Content = monochromaticASCII.ConvertToMonochromaticAscii(image).ToString();
             browser.DocumentText = "<pre>" + Content + "</pre>";
             btnConvertToASCII.Enabled = true;
         }
+
     }
 }

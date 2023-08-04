@@ -47,6 +47,5 @@ namespace ASCII_Art
             }
             return imageText;
         }
-        
     }
 }
