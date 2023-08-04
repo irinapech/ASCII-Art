@@ -39,16 +39,18 @@
             this.btnSaveAs = new System.Windows.Forms.Button();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.btnConvertToNumbersASCII = new System.Windows.Forms.Button();
-            this.textColorButton = new System.Windows.Forms.Button();
-            this.backgroundColorButton = new System.Windows.Forms.Button();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // backgroundColorButton
             // 
-            this.backgroundColorButton.Location = new System.Drawing.Point(0, 0);
+            this.backgroundColorButton.Location = new System.Drawing.Point(66, 457);
             this.backgroundColorButton.Name = "backgroundColorButton";
-            this.backgroundColorButton.Size = new System.Drawing.Size(75, 23);
-            this.backgroundColorButton.TabIndex = 0;
+            this.backgroundColorButton.Size = new System.Drawing.Size(156, 69);
+            this.backgroundColorButton.TabIndex = 7;
+            this.backgroundColorButton.Text = "button2";
+            this.backgroundColorButton.UseVisualStyleBackColor = true;
+            this.backgroundColorButton.Click += new System.EventHandler(this.backgroundColorButton_Click);
             // 
             // textColorButton
             // 
@@ -96,7 +98,7 @@
             this.browser.Location = new System.Drawing.Point(297, 57);
             this.browser.MinimumSize = new System.Drawing.Size(30, 31);
             this.browser.Name = "browser";
-            this.browser.Size = new System.Drawing.Size(687, 615);
+            this.browser.Size = new System.Drawing.Size(537, 615);
             this.browser.TabIndex = 0;
             // 
             // btnSaveAs
@@ -118,24 +120,22 @@
             this.btnConvertToNumbersASCII.Text = "Convert To Numbers";
             this.btnConvertToNumbersASCII.UseVisualStyleBackColor = true;
             this.btnConvertToNumbersASCII.Click += new System.EventHandler(this.BtnConvertToNumbersASCII_Click);
-            
             // 
-            // button2
+            // richTextBox1
             // 
-            this.backgroundColorButton.Location = new System.Drawing.Point(66, 457);
-            this.backgroundColorButton.Name = "button2";
-            this.backgroundColorButton.Size = new System.Drawing.Size(156, 69);
-            this.backgroundColorButton.TabIndex = 7;
-            this.backgroundColorButton.Text = "button2";
-            this.backgroundColorButton.UseVisualStyleBackColor = true;
-            this.backgroundColorButton.Click += new System.EventHandler(this.backgroundColorButton_Click);
+            this.richTextBox1.Location = new System.Drawing.Point(861, 57);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(564, 615);
+            this.richTextBox1.TabIndex = 8;
+            this.richTextBox1.Text = "";
             // 
             // Parent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(1002, 686);
+            this.ClientSize = new System.Drawing.Size(1453, 686);
+            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.backgroundColorButton);
             this.Controls.Add(this.textColorButton);
             this.Controls.Add(this.btnConvertToNumbersASCII);
@@ -168,6 +168,7 @@
         private System.Windows.Forms.Button btnConvertToNumbersASCII;
         private System.Windows.Forms.Button backgroundColorButton;
         private System.Windows.Forms.Button textColorButton;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }
 
