@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using System.IO;
 
@@ -27,6 +25,8 @@ namespace ASCII_Art
             }
         }
 
+        MonochromaticASCII monochromaticASCII = new MonochromaticASCII();
+
         private void BtnSaveAs_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -39,14 +39,14 @@ namespace ASCII_Art
             {
                 if (saveFileDialog.FilterIndex == 1)
                 {
-                    content = content.Replace("nbsp;", " ").Replace("<br>", "\r\n");
+                    monochromaticASCII.content = monochromaticASCII.content.Replace("nbsp;", " ").Replace("<br>", "\r\n");
                 }
                 else
                 {
-                    content = "<pre>" + content + "</pre>";
+                    monochromaticASCII.content = "<pre>" + monochromaticASCII.content + "</pre>";
                 }
                 StreamWriter sw = new StreamWriter(saveFileDialog.FileName);
-                sw.Write(content);
+                sw.Write(monochromaticASCII.content);
                 sw.Flush();
                 sw.Close();
             }

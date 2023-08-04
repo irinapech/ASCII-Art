@@ -1,16 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace ASCII_Art
 {
     public class MonochromaticASCII : Form
     {
         private readonly string[] charactersChoice = { "#", "#", "@", "@", "$", "$", "&", "&", "=", "=", "+", "+", "*", "*", ":", ":", "-", "-", ".", ".", "nbsp;" };
-        private string content;
+        public string content;
+
+        public MonochromaticASCII()
+        {
+            Console.WriteLine("Monochromatic ASCII is created");
+        }
 
         private StringBuilder ConvertToAscii(Bitmap image)
         {
@@ -42,7 +44,7 @@ namespace ASCII_Art
             }
             return imageText;
         }
-        private void BtnConvertToASCII_Click(object sender, EventArgs e)
+        public void BtnConvertToASCII_Click(object sender, EventArgs e)
         {
             btnConvertToASCII.Enabled = false;
             Bitmap image = new Bitmap(textPath.Text, true);

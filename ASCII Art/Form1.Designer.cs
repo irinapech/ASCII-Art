@@ -111,12 +111,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnConvertToASCII;
+        public System.Windows.Forms.Button btnConvertToASCII;
         private System.Windows.Forms.Button btnBrowse;
         private System.Windows.Forms.Button btnSaveAs;
-        private System.Windows.Forms.TextBox textPath;
+        public System.Windows.Forms.TextBox textPath;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
-        private System.Windows.Forms.WebBrowser browser;
+        public System.Windows.Forms.WebBrowser browser;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
     }
 }
