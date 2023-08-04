@@ -79,5 +79,39 @@ namespace ASCII_Art
             btnConvertToASCII.Enabled = true;
         }
 
+        private void textColorButton_Click(object sender, System.EventArgs e)
+        {
+            ColorDialog colorChooser = new ColorDialog();
+            DialogResult result;
+
+            result = colorChooser.ShowDialog();
+
+            if (result == DialogResult.Cancel)
+            {
+                return;
+            }
+
+            browser.ForeColor = colorChooser.Color;
+            backgroundColorButton.ForeColor = colorChooser.Color;
+            textColorButton.ForeColor = colorChooser.Color;
+
+        }
+
+        private void backgroundColorButton_Click(object sender, EventArgs e)
+        {
+            ColorDialog colorChooser = new ColorDialog();
+            DialogResult result;
+
+            colorChooser.FullOpen = true;
+            result = colorChooser.ShowDialog();
+
+            if (result == DialogResult.Cancel)
+            {
+                return;
+            }
+            this.BackColor = colorChooser.Color;
+            browser.BackColor = colorChooser.Color;
+            backgroundColorButton.BackColor = colorChooser.Color;
+        }
     }
 }

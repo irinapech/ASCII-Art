@@ -26,8 +26,11 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
+        /// 
         public void InitializeComponent()
         {
+            this.backgroundColorButton = new System.Windows.Forms.Button();
+            this.textColorButton = new System.Windows.Forms.Button();
             this.btnConvertToASCII = new System.Windows.Forms.Button();
             this.btnBrowse = new System.Windows.Forms.Button();
             this.textPath = new System.Windows.Forms.TextBox();
@@ -36,7 +39,26 @@
             this.btnSaveAs = new System.Windows.Forms.Button();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.btnConvertToNumbersASCII = new System.Windows.Forms.Button();
+            this.textColorButton = new System.Windows.Forms.Button();
+            this.backgroundColorButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // backgroundColorButton
+            // 
+            this.backgroundColorButton.Location = new System.Drawing.Point(0, 0);
+            this.backgroundColorButton.Name = "backgroundColorButton";
+            this.backgroundColorButton.Size = new System.Drawing.Size(75, 23);
+            this.backgroundColorButton.TabIndex = 0;
+            // 
+            // textColorButton
+            // 
+            this.textColorButton.Location = new System.Drawing.Point(66, 360);
+            this.textColorButton.Name = "textColorButton";
+            this.textColorButton.Size = new System.Drawing.Size(156, 66);
+            this.textColorButton.TabIndex = 6;
+            this.textColorButton.Text = "Change Text Color";
+            this.textColorButton.UseVisualStyleBackColor = true;
+            this.textColorButton.Click += new System.EventHandler(this.textColorButton_Click);
             // 
             // btnConvertToASCII
             // 
@@ -96,6 +118,17 @@
             this.btnConvertToNumbersASCII.Text = "Convert To Numbers";
             this.btnConvertToNumbersASCII.UseVisualStyleBackColor = true;
             this.btnConvertToNumbersASCII.Click += new System.EventHandler(this.BtnConvertToNumbersASCII_Click);
+            
+            // 
+            // button2
+            // 
+            this.backgroundColorButton.Location = new System.Drawing.Point(66, 457);
+            this.backgroundColorButton.Name = "button2";
+            this.backgroundColorButton.Size = new System.Drawing.Size(156, 69);
+            this.backgroundColorButton.TabIndex = 7;
+            this.backgroundColorButton.Text = "button2";
+            this.backgroundColorButton.UseVisualStyleBackColor = true;
+            this.backgroundColorButton.Click += new System.EventHandler(this.backgroundColorButton_Click);
             // 
             // Parent
             // 
@@ -103,6 +136,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1002, 686);
+            this.Controls.Add(this.backgroundColorButton);
+            this.Controls.Add(this.textColorButton);
             this.Controls.Add(this.btnConvertToNumbersASCII);
             this.Controls.Add(this.browser);
             this.Controls.Add(this.textPath);
@@ -131,6 +166,8 @@
         public System.Windows.Forms.WebBrowser browser;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
         private System.Windows.Forms.Button btnConvertToNumbersASCII;
+        private System.Windows.Forms.Button backgroundColorButton;
+        private System.Windows.Forms.Button textColorButton;
     }
 }
 
