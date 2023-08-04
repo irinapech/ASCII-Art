@@ -44,13 +44,5 @@ namespace ASCII_Art
             }
             return imageText;
         }
-        public void BtnConvertToNumbersASCII_Click(object sender, EventArgs e)
-        {
-            btnConvertToASCII.Enabled = false;
-            Bitmap image = new Bitmap(textPath.Text, true);
-            Content = ConvertToNumbersASCII(image).ToString();
-            browser.DocumentText = "<pre>" + Content + "</pre>";
-            btnConvertToASCII.Enabled = true;
-        }
     }
 }

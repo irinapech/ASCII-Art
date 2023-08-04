@@ -17,8 +17,6 @@ namespace ASCII_Art
         {
         }
 
-        //private string content;
-
         public string Content { get; set; }
 
         public void BtnBrowse_Click(object sender, EventArgs e)
@@ -56,7 +54,6 @@ namespace ASCII_Art
             }
         }
 
-
         private void btnConvertToASCII_Click(object sender, EventArgs e)
         {
             MonochromaticASCII monochromaticASCII = new MonochromaticASCII();
@@ -68,5 +65,15 @@ namespace ASCII_Art
             btnConvertToASCII.Enabled = true;
         }
 
+        public void BtnConvertToNumbersASCII_Click(object sender, EventArgs e)
+        {
+            NumbersASCII numbersASCII = new NumbersASCII();
+            
+            btnConvertToASCII.Enabled = false;
+            Bitmap image = new Bitmap(textPath.Text, true);
+            Content = numbersASCII.ConvertToNumbersASCII(image).ToString();
+            browser.DocumentText = "<pre>" + Content + "</pre>";
+            btnConvertToASCII.Enabled = true;
+        }
     }
 }
