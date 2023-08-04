@@ -4,19 +4,20 @@ using System.Text;
 
 namespace ASCII_Art
 {
-    public class MonochromaticASCII : Form
+    public class MonochromaticASCII : Parent
     {
         private readonly string[] charactersChoice = { "#", "#", "@", "@", "$", "$", "&", "&", "=", "=", "+", "+", "*", "*", ":", ":", "-", "-", ".", ".", "nbsp;" };
 
         public MonochromaticASCII()
         {
+            InitializeComponent();
         }
 
         ~MonochromaticASCII()
         {
         }
 
-        private StringBuilder ConvertToMonochromaticAscii(Bitmap image)
+        public StringBuilder ConvertToMonochromaticAscii(Bitmap image)
         {
             StringBuilder imageText = new StringBuilder();
 
@@ -46,13 +47,6 @@ namespace ASCII_Art
             }
             return imageText;
         }
-        public void BtnConvertToMonochromaticASCII_Click(object sender, EventArgs e)
-        {
-            btnConvertToASCII.Enabled = false;
-            Bitmap image = new Bitmap(textPath.Text, true);
-            Content = ConvertToMonochromaticAscii(image).ToString();
-            browser.DocumentText = "<pre>" + Content + "</pre>";
-            btnConvertToASCII.Enabled = true;
-        }
+        
     }
 }

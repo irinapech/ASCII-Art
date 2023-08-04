@@ -1,6 +1,6 @@
 ﻿namespace ASCII_Art
 {
-    partial class Form
+    partial class Parent
     {
         /// <summary>
         /// Required designer variable.
@@ -26,7 +26,7 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
+        public void InitializeComponent()
         {
             this.btnConvertToASCII = new System.Windows.Forms.Button();
             this.btnBrowse = new System.Windows.Forms.Button();
@@ -46,6 +46,7 @@
             this.btnConvertToASCII.TabIndex = 3;
             this.btnConvertToASCII.Text = "Convert To ASCII";
             this.btnConvertToASCII.UseVisualStyleBackColor = true;
+            this.btnConvertToASCII.Click += new System.EventHandler(this.btnConvertToASCII_Click);
             // 
             // btnBrowse
             // 
@@ -94,9 +95,9 @@
             this.btnConvertToNumbersASCII.TabIndex = 5;
             this.btnConvertToNumbersASCII.Text = "Convert To Numbers";
             this.btnConvertToNumbersASCII.UseVisualStyleBackColor = true;
-            //this.btnConvertToNumbersASCII.Click += new System.EventHandler(this.button1_Click);
+            //this.btnConvertToNumbersASCII.Click += new System.EventHandler(this.btnConvertToNumbersASCII_Click);
             // 
-            // Form
+            // Parent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -109,7 +110,7 @@
             this.Controls.Add(this.btnConvertToASCII);
             this.Controls.Add(this.btnSaveAs);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Name = "Form";
+            this.Name = "Parent";
             this.Text = "ASCII ART";
             this.TransparencyKey = System.Drawing.Color.RosyBrown;
             this.Load += new System.EventHandler(this.Form_Load);

@@ -1,12 +1,13 @@
 ﻿using System;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
 namespace ASCII_Art
 {
-    public partial class Form : System.Windows.Forms.Form
+    public partial class Parent : System.Windows.Forms.Form
     {
-        public Form()
+        public Parent()
         {
             InitializeComponent();
         }
@@ -52,6 +53,20 @@ namespace ASCII_Art
                 sw.Flush();
                 sw.Close();
             }
+        }
+
+        private void btnConvertToASCII_Click(object sender, EventArgs e)
+        {
+            MonochromaticASCII monochromaticASCII = new MonochromaticASCII();
+            
+            //monochromaticASCII.BtnConvertToMonochromaticASCII_Click(sender, e);
+
+            btnConvertToASCII.Enabled = false;
+            //Bitmap image = new Bitmap(monochromaticASCII.textPath.Text, true);
+            Bitmap image = new Bitmap(textPath.Text, true);
+            Content = monochromaticASCII.ConvertToMonochromaticAscii(image).ToString();
+            browser.DocumentText = "<pre>" + Content + "</pre>";
+            btnConvertToASCII.Enabled = true;
         }
     }
 }

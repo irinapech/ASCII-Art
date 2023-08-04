@@ -4,15 +4,17 @@ using System.Text;
 
 namespace ASCII_Art
 {
-    public class NumbersASCII : Form
+    public class NumbersASCII : Parent
     {
         private readonly string[] numbersChoice = { "0", "0", "8", "8", "6", "6", "4", "4", "3", "3", "9", "9", "5", "5", "7", "7", "1", "1", ".", ".", "nbsp;" };
 
-        public NumbersASCII() { }
+        public NumbersASCII() 
+        {
+        }
 
         ~NumbersASCII() { }
 
-        private StringBuilder ConvertToNumbersASCII(Bitmap image)
+        public StringBuilder ConvertToNumbersASCII(Bitmap image)
         {
             StringBuilder imageText = new StringBuilder();
 
