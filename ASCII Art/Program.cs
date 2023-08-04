@@ -19,6 +19,11 @@ namespace ASCII_Art
             monochromaticASCII.BtnConvertToMonochromaticASCII_Click(sender, e);
             monochromaticASCII.BtnSaveAs_Click(sender, e);
             monochromaticASCII.BtnBrowse_Click(sender, e);
+
+            NumbersASCII numbersASCII = new NumbersASCII();
+            numbersASCII.BtnConvertToNumbersASCII_Click(sender, e);
+            numbersASCII.BtnSaveAs_Click(sender, e);
+            numbersASCII.BtnBrowse_Click(sender, e);
         }
     }
 }

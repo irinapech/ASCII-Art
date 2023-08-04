@@ -35,6 +35,7 @@
             this.browser = new System.Windows.Forms.WebBrowser();
             this.btnSaveAs = new System.Windows.Forms.Button();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.btnConvertToNumbersASCII = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnConvertToASCII
@@ -45,7 +46,6 @@
             this.btnConvertToASCII.TabIndex = 3;
             this.btnConvertToASCII.Text = "Convert To ASCII";
             this.btnConvertToASCII.UseVisualStyleBackColor = true;
-            //this.btnConvertToASCII.Click += new System.EventHandler(this.BtnConvertToMonochromaticASCII_Click);
             // 
             // btnBrowse
             // 
@@ -86,12 +86,23 @@
             this.btnSaveAs.UseVisualStyleBackColor = true;
             this.btnSaveAs.Click += new System.EventHandler(this.BtnSaveAs_Click);
             // 
+            // btnConvertToNumbersASCII
+            // 
+            this.btnConvertToNumbersASCII.Location = new System.Drawing.Point(66, 252);
+            this.btnConvertToNumbersASCII.Name = "btnConvertToNumbersASCII";
+            this.btnConvertToNumbersASCII.Size = new System.Drawing.Size(156, 66);
+            this.btnConvertToNumbersASCII.TabIndex = 5;
+            this.btnConvertToNumbersASCII.Text = "Convert To Numbers";
+            this.btnConvertToNumbersASCII.UseVisualStyleBackColor = true;
+            //this.btnConvertToNumbersASCII.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1002, 686);
+            this.Controls.Add(this.btnConvertToNumbersASCII);
             this.Controls.Add(this.browser);
             this.Controls.Add(this.textPath);
             this.Controls.Add(this.btnBrowse);
@@ -118,6 +129,7 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog;
         public System.Windows.Forms.WebBrowser browser;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
+        private System.Windows.Forms.Button btnConvertToNumbersASCII;
     }
 }
 
