@@ -45,7 +45,7 @@
             this.btnConvertToASCII.TabIndex = 3;
             this.btnConvertToASCII.Text = "Convert To ASCII";
             this.btnConvertToASCII.UseVisualStyleBackColor = true;
-            //this.btnConvertToASCII.Click += new System.EventHandler(this.BtnConvertToASCII_Click);
+            //this.btnConvertToASCII.Click += new System.EventHandler(this.BtnConvertToMonochromaticASCII_Click);
             // 
             // btnBrowse
             // 

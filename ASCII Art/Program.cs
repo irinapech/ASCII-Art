@@ -16,7 +16,7 @@ namespace ASCII_Art
             Application.Run(new Form());
 
             MonochromaticASCII monochromaticASCII = new MonochromaticASCII();
-            monochromaticASCII.BtnConvertToASCII_Click(sender, e);
+            monochromaticASCII.BtnConvertToMonochromaticASCII_Click(sender, e);
             monochromaticASCII.BtnSaveAs_Click(sender, e);
             monochromaticASCII.BtnBrowse_Click(sender, e);
         }

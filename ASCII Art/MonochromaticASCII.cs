@@ -10,10 +10,13 @@ namespace ASCII_Art
 
         public MonochromaticASCII()
         {
-            Console.WriteLine("Monochromatic ASCII is created");
         }
 
-        private StringBuilder ConvertToAscii(Bitmap image)
+        ~MonochromaticASCII()
+        {
+        }
+
+        private StringBuilder ConvertToMonochromaticAscii(Bitmap image)
         {
             StringBuilder imageText = new StringBuilder();
 
@@ -43,11 +46,11 @@ namespace ASCII_Art
             }
             return imageText;
         }
-        public void BtnConvertToASCII_Click(object sender, EventArgs e)
+        public void BtnConvertToMonochromaticASCII_Click(object sender, EventArgs e)
         {
             btnConvertToASCII.Enabled = false;
             Bitmap image = new Bitmap(textPath.Text, true);
-            Content = ConvertToAscii(image).ToString();
+            Content = ConvertToMonochromaticAscii(image).ToString();
             browser.DocumentText = "<pre>" + Content + "</pre>";
             btnConvertToASCII.Enabled = true;
         }
