@@ -17,13 +17,11 @@ namespace ASCII_Art
         {
         }
 
-        //private string content;
-
         public string Content { get; set; }
 
         public void BtnBrowse_Click(object sender, EventArgs e)
         {
-            richTextBox1.Text = "";
+            richTextBox.Text = "";
             DialogResult diag = openFileDialog.ShowDialog();
             if (diag == DialogResult.OK)
             {
@@ -56,6 +54,20 @@ namespace ASCII_Art
             }
         }
 
+        private Bitmap ChangeImageSize(Bitmap bitmap, int ASCIIWidth)
+        {
+            int ASCIIeight = 0;
+            //Calculate the new Height of the image from its width
+            ASCIIeight = (int)Math.Ceiling((double)bitmap.Height * ASCIIWidth / bitmap.Width);
+            //Create a new Bitmap and define its resolution
+            Bitmap result = new Bitmap(ASCIIWidth, ASCIIeight);
+            Graphics g = Graphics.FromImage((Image)result);
+            //The interpolation mode produces high quality images
+            g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+            g.DrawImage(bitmap, 0, 0, ASCIIWidth, ASCIIeight);
+            g.Dispose();
+            return result;
+        }
 
         private void btnConvertToASCII_Click(object sender, EventArgs e)
         {
@@ -63,9 +75,11 @@ namespace ASCII_Art
 
             btnConvertToASCII.Enabled = false;
             Bitmap image = new Bitmap(textPath.Text, true);
-            Content = monochromaticASCII.ConvertToMonochromaticAscii(image).ToString();
-            richTextBox1.Text = "<pre>" + Content + "</pre>";
-            //richTextBox1.DocumentText = "<pre>" + Content + "</pre>";
+            image = ChangeImageSize(image, image.Width);
+            Content = monochromaticASCII.ConvertToMonochromaticAscii(image);
+            richTextBox.Text += Environment.NewLine + Content;
+            //richTextBox.Text = "<pre>" + Content + "</pre>";
+            //richTextBox.DocumentText = "<pre>" + Content + "</pre>";
             btnConvertToASCII.Enabled = true;
         }
 
@@ -76,8 +90,8 @@ namespace ASCII_Art
             btnConvertToASCII.Enabled = false;
             Bitmap image = new Bitmap(textPath.Text, true);
             Content = numbersASCII.ConvertToNumbersASCII(image).ToString();
-            richTextBox1.Text = "<pre>" + Content + "</pre>";
-            //richTextBox1.DocumentText = "<pre>" + Content + "</pre>";
+            richTextBox.Text = "<pre>" + Content + "</pre>";
+            //richTextBox.DocumentText = "<pre>" + Content + "</pre>";
             btnConvertToASCII.Enabled = true;
         }
 
@@ -93,7 +107,7 @@ namespace ASCII_Art
                 return;
             }
 
-            richTextBox1.ForeColor = colorChooser.Color;
+            richTextBox.ForeColor = colorChooser.Color;
             backgroundColorButton.ForeColor = colorChooser.Color;
             textColorButton.ForeColor = colorChooser.Color;
 
@@ -112,7 +126,7 @@ namespace ASCII_Art
                 return;
             }
             this.BackColor = colorChooser.Color;
-            richTextBox1.BackColor = colorChooser.Color;
+            richTextBox.BackColor = colorChooser.Color;
             backgroundColorButton.BackColor = colorChooser.Color;
         }
     }

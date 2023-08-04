@@ -35,11 +35,11 @@
             this.btnBrowse = new System.Windows.Forms.Button();
             this.textPath = new System.Windows.Forms.TextBox();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.browser = new System.Windows.Forms.WebBrowser();
+            //this.browser = new System.Windows.Forms.WebBrowser();
             this.btnSaveAs = new System.Windows.Forms.Button();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.btnConvertToNumbersASCII = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // backgroundColorButton
@@ -90,16 +90,29 @@
             this.textPath.Size = new System.Drawing.Size(971, 26);
             this.textPath.TabIndex = 1;
             // 
+            // richTextBox
+            // 
+            //this.richTextBox.Location = new System.Drawing.Point(293, 48);
+            //this.richTextBox.Name = "richTextBox";
+            //this.richTextBox.Size = new System.Drawing.Size(564, 615);
+            //this.richTextBox.TabIndex = 8;
+            //this.richTextBox.Text = "";
+            // 
             // browser
             // 
-            this.browser.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            //this.browser.Location = new System.Drawing.Point(12, 97);
+            //this.browser.Name = "browser";
+            //this.browser.Size = new System.Drawing.Size(250, 250);
+            //this.browser.TabIndex = 9;
+
+            this.richTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.browser.Location = new System.Drawing.Point(297, 57);
-            this.browser.MinimumSize = new System.Drawing.Size(30, 31);
-            this.browser.Name = "browser";
-            this.browser.Size = new System.Drawing.Size(537, 615);
-            this.browser.TabIndex = 0;
+            this.richTextBox.Location = new System.Drawing.Point(297, 57);
+            this.richTextBox.MinimumSize = new System.Drawing.Size(30, 31);
+            this.richTextBox.Name = "richTextBox";
+            this.richTextBox.Size = new System.Drawing.Size(687, 615);
+            this.richTextBox.TabIndex = 0;
             // 
             // btnSaveAs
             // 
@@ -121,25 +134,17 @@
             this.btnConvertToNumbersASCII.UseVisualStyleBackColor = true;
             this.btnConvertToNumbersASCII.Click += new System.EventHandler(this.BtnConvertToNumbersASCII_Click);
             // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(861, 57);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(564, 615);
-            this.richTextBox1.TabIndex = 8;
-            this.richTextBox1.Text = "";
-            // 
             // Parent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(1453, 686);
-            this.Controls.Add(this.richTextBox1);
+            this.ClientSize = new System.Drawing.Size(999, 686);
+            this.Controls.Add(this.richTextBox);
             this.Controls.Add(this.backgroundColorButton);
             this.Controls.Add(this.textColorButton);
             this.Controls.Add(this.btnConvertToNumbersASCII);
-            this.Controls.Add(this.browser);
+            //this.Controls.Add(this.browser);
             this.Controls.Add(this.textPath);
             this.Controls.Add(this.btnBrowse);
             this.Controls.Add(this.btnConvertToASCII);
@@ -163,12 +168,12 @@
         private System.Windows.Forms.Button btnSaveAs;
         public System.Windows.Forms.TextBox textPath;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
-        public System.Windows.Forms.WebBrowser browser;
+        //public System.Windows.Forms.WebBrowser browser;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
         private System.Windows.Forms.Button btnConvertToNumbersASCII;
         private System.Windows.Forms.Button backgroundColorButton;
         private System.Windows.Forms.Button textColorButton;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox richTextBox;
     }
 }
 
