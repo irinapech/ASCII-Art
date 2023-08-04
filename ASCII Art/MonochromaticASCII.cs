@@ -7,7 +7,6 @@ namespace ASCII_Art
     public class MonochromaticASCII : Form
     {
         private readonly string[] charactersChoice = { "#", "#", "@", "@", "$", "$", "&", "&", "=", "=", "+", "+", "*", "*", ":", ":", "-", "-", ".", ".", "nbsp;" };
-        public string content;
 
         public MonochromaticASCII()
         {

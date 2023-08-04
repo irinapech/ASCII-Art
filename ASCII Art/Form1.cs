@@ -15,6 +15,8 @@ namespace ASCII_Art
         {
         }
 
+        public string content;
+
         private void BtnBrowse_Click(object sender, EventArgs e)
         {
             browser.DocumentText = "";
@@ -24,8 +26,6 @@ namespace ASCII_Art
                 textPath.Text = openFileDialog.FileName;
             }
         }
-
-        MonochromaticASCII monochromaticASCII = new MonochromaticASCII();
 
         private void BtnSaveAs_Click(object sender, EventArgs e)
         {
@@ -39,14 +39,14 @@ namespace ASCII_Art
             {
                 if (saveFileDialog.FilterIndex == 1)
                 {
-                    monochromaticASCII.content = monochromaticASCII.content.Replace("nbsp;", " ").Replace("<br>", "\r\n");
+                    content = content.Replace("nbsp;", " ").Replace("<br>", "\r\n");
                 }
                 else
                 {
-                    monochromaticASCII.content = "<pre>" + monochromaticASCII.content + "</pre>";
+                    content = "<pre>" + content + "</pre>";
                 }
                 StreamWriter sw = new StreamWriter(saveFileDialog.FileName);
-                sw.Write(monochromaticASCII.content);
+                sw.Write(content);
                 sw.Flush();
                 sw.Close();
             }
