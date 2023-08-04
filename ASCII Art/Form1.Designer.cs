@@ -95,7 +95,7 @@
             this.btnConvertToNumbersASCII.TabIndex = 5;
             this.btnConvertToNumbersASCII.Text = "Convert To Numbers";
             this.btnConvertToNumbersASCII.UseVisualStyleBackColor = true;
-            //this.btnConvertToNumbersASCII.Click += new System.EventHandler(this.btnConvertToNumbersASCII_Click);
+            this.btnConvertToNumbersASCII.Click += new System.EventHandler(this.BtnConvertToNumbersASCII_Click);
             // 
             // Parent
             // 
