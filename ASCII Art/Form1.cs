@@ -19,7 +19,7 @@ namespace ASCII_Art
 
         public string Content { get; set; }
 
-        private void BtnBrowse_Click(object sender, EventArgs e)
+        public void BtnBrowse_Click(object sender, EventArgs e)
         {
             browser.DocumentText = "";
             DialogResult diag = openFileDialog.ShowDialog();
@@ -29,7 +29,7 @@ namespace ASCII_Art
             }
         }
 
-        private void BtnSaveAs_Click(object sender, EventArgs e)
+        public void BtnSaveAs_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
 
