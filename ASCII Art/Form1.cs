@@ -15,7 +15,9 @@ namespace ASCII_Art
         {
         }
 
-        public string content;
+        //private string content;
+
+        public string Content { get; set; }
 
         private void BtnBrowse_Click(object sender, EventArgs e)
         {
@@ -39,14 +41,14 @@ namespace ASCII_Art
             {
                 if (saveFileDialog.FilterIndex == 1)
                 {
-                    content = content.Replace("nbsp;", " ").Replace("<br>", "\r\n");
+                    Content = Content.Replace("nbsp;", " ").Replace("<br>", "\r\n");
                 }
                 else
                 {
-                    content = "<pre>" + content + "</pre>";
+                    Content = "<pre>" + Content + "</pre>";
                 }
                 StreamWriter sw = new StreamWriter(saveFileDialog.FileName);
-                sw.Write(content);
+                sw.Write(Content);
                 sw.Flush();
                 sw.Close();
             }

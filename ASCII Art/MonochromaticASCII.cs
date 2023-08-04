@@ -47,8 +47,8 @@ namespace ASCII_Art
         {
             btnConvertToASCII.Enabled = false;
             Bitmap image = new Bitmap(textPath.Text, true);
-            content = ConvertToAscii(image).ToString();
-            browser.DocumentText = "<pre>" + content + "</pre>";
+            Content = ConvertToAscii(image).ToString();
+            browser.DocumentText = "<pre>" + Content + "</pre>";
             btnConvertToASCII.Enabled = true;
         }
     }
