@@ -41,7 +41,6 @@
             this.btnConvertToNumbersASCII = new System.Windows.Forms.Button();
             this.btnChangeLightness = new System.Windows.Forms.Button();
             this.btnChangeLuminosity = new System.Windows.Forms.Button();
-            this.btnColorText = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // backgroundColorButton
@@ -144,23 +143,12 @@
             this.btnChangeLuminosity.UseVisualStyleBackColor = true;
             this.btnChangeLuminosity.Click += new System.EventHandler(this.BtnChangeLuminosity_Click);
             // 
-            // btnColorText
-            // 
-            this.btnColorText.Location = new System.Drawing.Point(66, 615);
-            this.btnColorText.Name = "btnColorText";
-            this.btnColorText.Size = new System.Drawing.Size(156, 64);
-            this.btnColorText.TabIndex = 10;
-            this.btnColorText.Text = "Color Text";
-            this.btnColorText.UseVisualStyleBackColor = true;
-            this.btnColorText.Click += new System.EventHandler(this.BtnColorText_Click);
-            // 
             // Parent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(999, 854);
-            this.Controls.Add(this.btnColorText);
             this.Controls.Add(this.btnChangeLuminosity);
             this.Controls.Add(this.btnChangeLightness);
             this.Controls.Add(this.browser);
@@ -197,7 +185,6 @@
         private System.Windows.Forms.Button textColorButton;
         private System.Windows.Forms.Button btnChangeLightness;
         private System.Windows.Forms.Button btnChangeLuminosity;
-        private System.Windows.Forms.Button btnColorText;
         //private System.Windows.Forms.RichTextBox browser;
     }
 }

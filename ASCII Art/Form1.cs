@@ -145,18 +145,5 @@ namespace ASCII_Art
             browser.DocumentText = "<pre>" + Content + "</pre>";
             btnConvertToASCII.Enabled = true;
         }
-
-        private void BtnColorText_Click(object sender, EventArgs e)
-        {
-            TextColorChange textColorChange = new TextColorChange();
-
-            //StreamWriter ContentStream = new StreamWriter(browser.DocumentStream);
-            btnColorText.Enabled = false;
-            Bitmap image = new Bitmap(textPath.Text, true);
-            image = ChangeImageSize(image, image.Width);
-            //ContentStream = textColorChange.ChangeTextColor(image);
-            browser.DocumentText = "<pre>" + textColorChange.ChangeTextColor(image) +"</pre>";
-            btnColorText.Enabled = true;
-        }
     }
 }
