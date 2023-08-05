@@ -37,7 +37,7 @@ namespace ASCII_Art
                             colorValue = (Math.Max(Math.Max(pixel.R, pixel.G), pixel.B) + Math.Min(Math.Min(pixel.R, pixel.G), pixel.B)) / 2;
                             break;
                         case "Average":
-                            colorValue = (pixel.R + pixel.G + pixel.B) / 3;
+                            colorValue = ((255 - pixel.R) + (255 - pixel.G) + (255 - pixel.B)) / 3;
                             break;
                         case "Luminosity":
                             colorValue = (int)(0.21 * pixel.R + 0.72 * pixel.G + 0.07 * pixel.B);

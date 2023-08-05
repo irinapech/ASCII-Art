@@ -131,5 +131,17 @@ namespace ASCII_Art
             }
             btnChangeBrowserTextColor.Enabled = true;
         }
+
+        private void btnInvertBrightness_Click(object sender, EventArgs e)
+        {
+            btnInvertBrightness.Enabled = false;
+            Britghness britghness = new Britghness();
+
+            Bitmap image = new Bitmap(textPath.Text, true);
+            image = ChangeImageSize(image, image.Width);
+            Content = britghness.RevertBrightness(image);
+            browser.DocumentText = Content;
+            btnInvertBrightness.Enabled = true;
+        }
     }
 }

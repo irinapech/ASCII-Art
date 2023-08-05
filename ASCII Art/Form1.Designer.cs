@@ -42,11 +42,12 @@
             this.btnChangeBrowserBackgroundColor = new System.Windows.Forms.Button();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
             this.btnChangeBrowserTextColor = new System.Windows.Forms.Button();
+            this.btnInvertBrightness = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnConvertToASCII
             // 
-            this.btnConvertToASCII.Location = new System.Drawing.Point(66, 108);
+            this.btnConvertToASCII.Location = new System.Drawing.Point(66, 97);
             this.btnConvertToASCII.Name = "btnConvertToASCII";
             this.btnConvertToASCII.Size = new System.Drawing.Size(156, 67);
             this.btnConvertToASCII.TabIndex = 3;
@@ -81,12 +82,12 @@
             this.browser.Location = new System.Drawing.Point(297, 57);
             this.browser.MinimumSize = new System.Drawing.Size(30, 31);
             this.browser.Name = "browser";
-            this.browser.Size = new System.Drawing.Size(687, 641);
+            this.browser.Size = new System.Drawing.Size(687, 600);
             this.browser.TabIndex = 0;
             // 
             // btnSaveAs
             // 
-            this.btnSaveAs.Location = new System.Drawing.Point(13, 636);
+            this.btnSaveAs.Location = new System.Drawing.Point(13, 593);
             this.btnSaveAs.Name = "btnSaveAs";
             this.btnSaveAs.Size = new System.Drawing.Size(265, 64);
             this.btnSaveAs.TabIndex = 4;
@@ -96,7 +97,7 @@
             // 
             // btnConvertToNumbersASCII
             // 
-            this.btnConvertToNumbersASCII.Location = new System.Drawing.Point(66, 194);
+            this.btnConvertToNumbersASCII.Location = new System.Drawing.Point(66, 170);
             this.btnConvertToNumbersASCII.Name = "btnConvertToNumbersASCII";
             this.btnConvertToNumbersASCII.Size = new System.Drawing.Size(156, 66);
             this.btnConvertToNumbersASCII.TabIndex = 5;
@@ -106,7 +107,7 @@
             // 
             // btnChangeLightness
             // 
-            this.btnChangeLightness.Location = new System.Drawing.Point(66, 284);
+            this.btnChangeLightness.Location = new System.Drawing.Point(66, 242);
             this.btnChangeLightness.Name = "btnChangeLightness";
             this.btnChangeLightness.Size = new System.Drawing.Size(156, 65);
             this.btnChangeLightness.TabIndex = 8;
@@ -116,7 +117,7 @@
             // 
             // btnChangeLuminosity
             // 
-            this.btnChangeLuminosity.Location = new System.Drawing.Point(66, 374);
+            this.btnChangeLuminosity.Location = new System.Drawing.Point(66, 313);
             this.btnChangeLuminosity.Name = "btnChangeLuminosity";
             this.btnChangeLuminosity.Size = new System.Drawing.Size(156, 66);
             this.btnChangeLuminosity.TabIndex = 9;
@@ -126,7 +127,7 @@
             // 
             // btnChangeBrowserBackgroundColor
             // 
-            this.btnChangeBrowserBackgroundColor.Location = new System.Drawing.Point(66, 463);
+            this.btnChangeBrowserBackgroundColor.Location = new System.Drawing.Point(66, 385);
             this.btnChangeBrowserBackgroundColor.Name = "btnChangeBrowserBackgroundColor";
             this.btnChangeBrowserBackgroundColor.Size = new System.Drawing.Size(156, 66);
             this.btnChangeBrowserBackgroundColor.TabIndex = 10;
@@ -136,7 +137,7 @@
             // 
             // btnChangeBrowserTextColor
             // 
-            this.btnChangeBrowserTextColor.Location = new System.Drawing.Point(66, 552);
+            this.btnChangeBrowserTextColor.Location = new System.Drawing.Point(66, 457);
             this.btnChangeBrowserTextColor.Name = "btnChangeBrowserTextColor";
             this.btnChangeBrowserTextColor.Size = new System.Drawing.Size(156, 64);
             this.btnChangeBrowserTextColor.TabIndex = 11;
@@ -144,12 +145,23 @@
             this.btnChangeBrowserTextColor.UseVisualStyleBackColor = true;
             this.btnChangeBrowserTextColor.Click += new System.EventHandler(this.BtnChangeBrowserTextColor_Click);
             // 
+            // btnInvertBrightness
+            // 
+            this.btnInvertBrightness.Location = new System.Drawing.Point(66, 527);
+            this.btnInvertBrightness.Name = "btnInvertBrightness";
+            this.btnInvertBrightness.Size = new System.Drawing.Size(156, 60);
+            this.btnInvertBrightness.TabIndex = 12;
+            this.btnInvertBrightness.Text = "Invert Brightness";
+            this.btnInvertBrightness.UseVisualStyleBackColor = true;
+            this.btnInvertBrightness.Click += new System.EventHandler(this.btnInvertBrightness_Click);
+            // 
             // Parent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(999, 730);
+            this.ClientSize = new System.Drawing.Size(999, 671);
+            this.Controls.Add((System.Windows.Forms.Control)this.btnInvertBrightness);
             this.Controls.Add(this.btnChangeBrowserTextColor);
             this.Controls.Add(this.btnChangeBrowserBackgroundColor);
             this.Controls.Add(this.btnChangeLuminosity);
@@ -187,6 +199,7 @@
         private System.Windows.Forms.Button btnChangeBrowserBackgroundColor;
         private System.Windows.Forms.ColorDialog colorDialog;
         private System.Windows.Forms.Button btnChangeBrowserTextColor;
+        private System.Windows.Forms.Button btnInvertBrightness;
     }
 }
 
