@@ -81,69 +81,59 @@ namespace ASCII_Art
         {
             NumbersASCII numbersASCII = new NumbersASCII();
             
-            btnConvertToASCII.Enabled = false;
+            btnConvertToNumbersASCII.Enabled = false;
             Bitmap image = new Bitmap(textPath.Text, true);
             Content = numbersASCII.ConvertToNumbersASCII(image).ToString();
             browser.DocumentText = "<pre>" + Content + "</pre>";
-            btnConvertToASCII.Enabled = true;
-        }
-
-        private void textColorButton_Click(object sender, System.EventArgs e)
-        {
-            ColorDialog colorChooser = new ColorDialog();
-            DialogResult result;
-
-            result = colorChooser.ShowDialog();
-
-            if (result == DialogResult.Cancel)
-            {
-                return;
-            }
-
-            browser.ForeColor = colorChooser.Color;
-            backgroundColorButton.ForeColor = colorChooser.Color;
-            textColorButton.ForeColor = colorChooser.Color;
-        }
-
-        private void backgroundColorButton_Click(object sender, EventArgs e)
-        {
-            ColorDialog colorChooser = new ColorDialog();
-            DialogResult result;
-
-            colorChooser.FullOpen = true;
-            result = colorChooser.ShowDialog();
-
-            if (result == DialogResult.Cancel)
-            {
-                return;
-            }
-            this.BackColor = colorChooser.Color;
-            browser.BackColor = colorChooser.Color;
-            backgroundColorButton.BackColor = colorChooser.Color;
+            btnConvertToNumbersASCII.Enabled = true;
         }
 
         private void BtnChangeLightness_Click(object sender, EventArgs e)
         {
             MonochromaticASCII monochromaticASCII = new MonochromaticASCII();
 
-            btnConvertToASCII.Enabled = false;
+            btnChangeLightness.Enabled = false;
             Bitmap image = new Bitmap(textPath.Text, true);
             image = ChangeImageSize(image, image.Width);
             Content = monochromaticASCII.ConvertToMonochromaticAscii(image, "Lightness");
             browser.DocumentText = "<pre>" + Content + "</pre>";
-            btnConvertToASCII.Enabled = true;
+            btnChangeLightness.Enabled = true;
         }
 
         private void BtnChangeLuminosity_Click(object sender, EventArgs e)
         {
             MonochromaticASCII monochromaticASCII = new MonochromaticASCII();
 
-            btnConvertToASCII.Enabled = false;
+            btnChangeLuminosity.Enabled = false;
             Bitmap image = new Bitmap(textPath.Text, true);
             image = ChangeImageSize(image, image.Width);
             Content = monochromaticASCII.ConvertToMonochromaticAscii(image, "Luminosity");
             browser.DocumentText = "<pre>" + Content + "</pre>";
-            btnConvertToASCII.Enabled = true;
+            btnChangeLuminosity.Enabled = true;
+        }
+
+        private void BtnChangeBrowserBackgroundColor_Click(object sender, EventArgs e)
+        {   
+            btnChangeBrowserBackgroundColor.Enabled = false;
+            DialogResult colors = colorDialog.ShowDialog();
+            if (colors == DialogResult.OK)
+            {
+                string colorCode = ColorTranslator.ToHtml(colorDialog.Color).ToString();
+                browser.DocumentText += "<html><body style='background-color:" + colorCode + "'></body></html>";
+            }
+            btnChangeBrowserBackgroundColor.Enabled = true;
+        }
+
+        private void BtnChangeBrowserTextColor_Click(object sender, EventArgs e)
+        {
+            btnChangeBrowserTextColor.Enabled = false;
+            DialogResult colors = colorDialog.ShowDialog();
+            if (colors == DialogResult.OK)
+            {
+                string colorCode = ColorTranslator.ToHtml(colorDialog.Color).ToString();
+                browser.DocumentText += "<html><body style='color:" + colorCode + "'></body></html>";
+            }
+            btnChangeBrowserTextColor.Enabled = true;
         }
     }
 }

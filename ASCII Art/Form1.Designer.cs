@@ -29,8 +29,6 @@
         /// 
         public void InitializeComponent()
         {
-            this.backgroundColorButton = new System.Windows.Forms.Button();
-            this.textColorButton = new System.Windows.Forms.Button();
             this.btnConvertToASCII = new System.Windows.Forms.Button();
             this.btnBrowse = new System.Windows.Forms.Button();
             this.textPath = new System.Windows.Forms.TextBox();
@@ -41,27 +39,10 @@
             this.btnConvertToNumbersASCII = new System.Windows.Forms.Button();
             this.btnChangeLightness = new System.Windows.Forms.Button();
             this.btnChangeLuminosity = new System.Windows.Forms.Button();
+            this.btnChangeBrowserBackgroundColor = new System.Windows.Forms.Button();
+            this.colorDialog = new System.Windows.Forms.ColorDialog();
+            this.btnChangeBrowserTextColor = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // backgroundColorButton
-            // 
-            this.backgroundColorButton.Location = new System.Drawing.Point(66, 358);
-            this.backgroundColorButton.Name = "backgroundColorButton";
-            this.backgroundColorButton.Size = new System.Drawing.Size(156, 69);
-            this.backgroundColorButton.TabIndex = 7;
-            this.backgroundColorButton.Text = "Change Background Color";
-            this.backgroundColorButton.UseVisualStyleBackColor = true;
-            this.backgroundColorButton.Click += new System.EventHandler(this.backgroundColorButton_Click);
-            // 
-            // textColorButton
-            // 
-            this.textColorButton.Location = new System.Drawing.Point(66, 276);
-            this.textColorButton.Name = "textColorButton";
-            this.textColorButton.Size = new System.Drawing.Size(156, 66);
-            this.textColorButton.TabIndex = 6;
-            this.textColorButton.Text = "Change Text Color";
-            this.textColorButton.UseVisualStyleBackColor = true;
-            this.textColorButton.Click += new System.EventHandler(this.textColorButton_Click);
             // 
             // btnConvertToASCII
             // 
@@ -100,14 +81,14 @@
             this.browser.Location = new System.Drawing.Point(297, 57);
             this.browser.MinimumSize = new System.Drawing.Size(30, 31);
             this.browser.Name = "browser";
-            this.browser.Size = new System.Drawing.Size(687, 783);
+            this.browser.Size = new System.Drawing.Size(687, 641);
             this.browser.TabIndex = 0;
             // 
             // btnSaveAs
             // 
-            this.btnSaveAs.Location = new System.Drawing.Point(66, 776);
+            this.btnSaveAs.Location = new System.Drawing.Point(13, 636);
             this.btnSaveAs.Name = "btnSaveAs";
-            this.btnSaveAs.Size = new System.Drawing.Size(156, 64);
+            this.btnSaveAs.Size = new System.Drawing.Size(265, 64);
             this.btnSaveAs.TabIndex = 4;
             this.btnSaveAs.Text = "Save As";
             this.btnSaveAs.UseVisualStyleBackColor = true;
@@ -125,7 +106,7 @@
             // 
             // btnChangeLightness
             // 
-            this.btnChangeLightness.Location = new System.Drawing.Point(66, 444);
+            this.btnChangeLightness.Location = new System.Drawing.Point(66, 284);
             this.btnChangeLightness.Name = "btnChangeLightness";
             this.btnChangeLightness.Size = new System.Drawing.Size(156, 65);
             this.btnChangeLightness.TabIndex = 8;
@@ -135,7 +116,7 @@
             // 
             // btnChangeLuminosity
             // 
-            this.btnChangeLuminosity.Location = new System.Drawing.Point(66, 526);
+            this.btnChangeLuminosity.Location = new System.Drawing.Point(66, 374);
             this.btnChangeLuminosity.Name = "btnChangeLuminosity";
             this.btnChangeLuminosity.Size = new System.Drawing.Size(156, 66);
             this.btnChangeLuminosity.TabIndex = 9;
@@ -143,17 +124,37 @@
             this.btnChangeLuminosity.UseVisualStyleBackColor = true;
             this.btnChangeLuminosity.Click += new System.EventHandler(this.BtnChangeLuminosity_Click);
             // 
+            // btnChangeBrowserBackgroundColor
+            // 
+            this.btnChangeBrowserBackgroundColor.Location = new System.Drawing.Point(66, 463);
+            this.btnChangeBrowserBackgroundColor.Name = "btnChangeBrowserBackgroundColor";
+            this.btnChangeBrowserBackgroundColor.Size = new System.Drawing.Size(156, 66);
+            this.btnChangeBrowserBackgroundColor.TabIndex = 10;
+            this.btnChangeBrowserBackgroundColor.Text = "Change Background Color";
+            this.btnChangeBrowserBackgroundColor.UseVisualStyleBackColor = true;
+            this.btnChangeBrowserBackgroundColor.Click += new System.EventHandler(this.BtnChangeBrowserBackgroundColor_Click);
+            // 
+            // btnChangeBrowserTextColor
+            // 
+            this.btnChangeBrowserTextColor.Location = new System.Drawing.Point(66, 552);
+            this.btnChangeBrowserTextColor.Name = "btnChangeBrowserTextColor";
+            this.btnChangeBrowserTextColor.Size = new System.Drawing.Size(156, 64);
+            this.btnChangeBrowserTextColor.TabIndex = 11;
+            this.btnChangeBrowserTextColor.Text = "Change Text Color";
+            this.btnChangeBrowserTextColor.UseVisualStyleBackColor = true;
+            this.btnChangeBrowserTextColor.Click += new System.EventHandler(this.BtnChangeBrowserTextColor_Click);
+            // 
             // Parent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(999, 854);
+            this.ClientSize = new System.Drawing.Size(999, 730);
+            this.Controls.Add(this.btnChangeBrowserTextColor);
+            this.Controls.Add(this.btnChangeBrowserBackgroundColor);
             this.Controls.Add(this.btnChangeLuminosity);
             this.Controls.Add(this.btnChangeLightness);
             this.Controls.Add(this.browser);
-            this.Controls.Add(this.backgroundColorButton);
-            this.Controls.Add(this.textColorButton);
             this.Controls.Add(this.btnConvertToNumbersASCII);
             this.Controls.Add(this.textPath);
             this.Controls.Add(this.btnBrowse);
@@ -181,11 +182,11 @@
         public System.Windows.Forms.WebBrowser browser;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
         private System.Windows.Forms.Button btnConvertToNumbersASCII;
-        private System.Windows.Forms.Button backgroundColorButton;
-        private System.Windows.Forms.Button textColorButton;
         private System.Windows.Forms.Button btnChangeLightness;
         private System.Windows.Forms.Button btnChangeLuminosity;
-        //private System.Windows.Forms.RichTextBox browser;
+        private System.Windows.Forms.Button btnChangeBrowserBackgroundColor;
+        private System.Windows.Forms.ColorDialog colorDialog;
+        private System.Windows.Forms.Button btnChangeBrowserTextColor;
     }
 }
 
