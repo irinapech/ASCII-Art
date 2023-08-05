@@ -39,7 +39,7 @@ namespace ASCII_Art
 
                 if (i % 2 == 0)
                 {
-                    imageText.Append("<br>");
+                    imageText.Append("\r\n");
                 }
             }
             return imageText;

@@ -40,7 +40,7 @@ namespace ASCII_Art
             {
                 if (saveFileDialog.FilterIndex == 1)
                 {
-                    Content = Content.Replace("nbsp;", " ").Replace("<br>", "\r\n");
+                    Content = Content.Replace("nbsp;", " ");
                 }
                 else
                 {
@@ -53,19 +53,16 @@ namespace ASCII_Art
             }
         }
 
-        private Bitmap ChangeImageSize(Bitmap bitmap, int ASCIIWidth)
+        private Bitmap ChangeImageSize(Bitmap image, int ASCIIWidth)
         {
             int ASCIIeight = 0;
-            //Calculate the new Height of the image from its width
-            ASCIIeight = (int)Math.Ceiling((double)bitmap.Height * ASCIIWidth / bitmap.Width);
-            //Create a new Bitmap and define its resolution
-            Bitmap result = new Bitmap(ASCIIWidth, ASCIIeight);
-            Graphics g = Graphics.FromImage((Image)result);
-            //The interpolation mode produces high quality images
+            ASCIIeight = (int)Math.Ceiling((double)image.Height * ASCIIWidth / image.Width);
+            Bitmap resizedImage = new Bitmap(ASCIIWidth, ASCIIeight);
+            Graphics g = Graphics.FromImage((Image)resizedImage);
             g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
-            g.DrawImage(bitmap, 0, 0, ASCIIWidth, ASCIIeight);
+            g.DrawImage(image, 0, 0, ASCIIWidth, ASCIIeight);
             g.Dispose();
-            return result;
+            return resizedImage;
         }
 
         private void btnConvertToASCII_Click(object sender, EventArgs e)
@@ -137,7 +134,7 @@ namespace ASCII_Art
             btnConvertToASCII.Enabled = true;
         }
 
-        private void BtnChangeLuminosity(object sender, EventArgs e)
+        private void BtnChangeLuminosity_Click(object sender, EventArgs e)
         {
             MonochromaticASCII monochromaticASCII = new MonochromaticASCII();
 
@@ -147,6 +144,19 @@ namespace ASCII_Art
             Content = monochromaticASCII.ConvertToMonochromaticAscii(image, "Luminosity");
             browser.DocumentText = "<pre>" + Content + "</pre>";
             btnConvertToASCII.Enabled = true;
+        }
+
+        private void BtnColorText_Click(object sender, EventArgs e)
+        {
+            TextColorChange textColorChange = new TextColorChange();
+
+            //StreamWriter ContentStream = new StreamWriter(browser.DocumentStream);
+            btnColorText.Enabled = false;
+            Bitmap image = new Bitmap(textPath.Text, true);
+            image = ChangeImageSize(image, image.Width);
+            //ContentStream = textColorChange.ChangeTextColor(image);
+            browser.DocumentText = "<pre>" + textColorChange.ChangeTextColor(image) +"</pre>";
+            btnColorText.Enabled = true;
         }
     }
 }
