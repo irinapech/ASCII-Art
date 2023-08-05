@@ -6,9 +6,7 @@ namespace ASCII_Art
 {
     public class NumbersASCII : Parent
     {
-        private string[] numbersChoice = { "7", "7", "3", "3", "1", "1", "5", "5", "2", "2", "6", "6", "9", "9", "4", "4", "8", "8", "0", "0", ".", ".", "nbsp;" } ;
-        // private readonly string[] numbersChoice2 = { "0", "0", "8", "8", "6", "6", "4", "4", "3", "3", "9", "9", "5", "5", "7", "7", "1", "1", ".", ".", "nbsp;" };
-
+        private string[] numbersChoice = { "2", "2", "3", "3", "1", "1", "5", "5", "7", "7", "6", "6", "9", "9", "4", "4", "8", "8", "0", "0", ".", ".", "nbsp;" } ;
 
         public NumbersASCII() 
         {

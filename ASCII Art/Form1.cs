@@ -21,7 +21,6 @@ namespace ASCII_Art
 
         public void BtnBrowse_Click(object sender, EventArgs e)
         {
-            richTextBox.Text = "";
             DialogResult diag = openFileDialog.ShowDialog();
             if (diag == DialogResult.OK)
             {
@@ -77,9 +76,7 @@ namespace ASCII_Art
             Bitmap image = new Bitmap(textPath.Text, true);
             image = ChangeImageSize(image, image.Width);
             Content = monochromaticASCII.ConvertToMonochromaticAscii(image);
-            richTextBox.Text += Environment.NewLine + Content;
-            //richTextBox.Text = "<pre>" + Content + "</pre>";
-            //richTextBox.DocumentText = "<pre>" + Content + "</pre>";
+            browser.DocumentText = "<pre>" + Content + "</pre>";
             btnConvertToASCII.Enabled = true;
         }
 
@@ -90,8 +87,7 @@ namespace ASCII_Art
             btnConvertToASCII.Enabled = false;
             Bitmap image = new Bitmap(textPath.Text, true);
             Content = numbersASCII.ConvertToNumbersASCII(image).ToString();
-            richTextBox.Text = "<pre>" + Content + "</pre>";
-            //richTextBox.DocumentText = "<pre>" + Content + "</pre>";
+            browser.DocumentText = "<pre>" + Content + "</pre>";
             btnConvertToASCII.Enabled = true;
         }
 
@@ -107,7 +103,7 @@ namespace ASCII_Art
                 return;
             }
 
-            richTextBox.ForeColor = colorChooser.Color;
+            browser.ForeColor = colorChooser.Color;
             backgroundColorButton.ForeColor = colorChooser.Color;
             textColorButton.ForeColor = colorChooser.Color;
 
@@ -126,7 +122,7 @@ namespace ASCII_Art
                 return;
             }
             this.BackColor = colorChooser.Color;
-            richTextBox.BackColor = colorChooser.Color;
+            browser.BackColor = colorChooser.Color;
             backgroundColorButton.BackColor = colorChooser.Color;
         }
     }

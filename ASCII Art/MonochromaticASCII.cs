@@ -19,7 +19,7 @@ namespace ASCII_Art
 
         public string ConvertToMonochromaticAscii(Bitmap image)
         {
-            string imageText = "";
+            StringBuilder imageText = new StringBuilder();
 
             int height = image.Height;
             int width = image.Width;
@@ -33,22 +33,19 @@ namespace ASCII_Art
                     // calculating the gray factor of the pixel
                     Color gray = Color.FromArgb(rgb, rgb, rgb);
 
-                    int indexofASCIICharacter = (gray.R * 10) / 255;
-                    imageText.Append(charactersChoice[indexofASCIICharacter]);
-                    //if (i % 2 == 0)
-                    //{
-                    //    int indexofASCIICharacter = (gray.R * 10) / 255;
-                    //    imageText.Append(charactersChoice[indexofASCIICharacter]);
-                    //}
+                    if (i % 2 == 0)
+                    {
+                        int indexofASCIICharacter = (gray.R * 10) / 255;
+                        imageText.Append(charactersChoice[indexofASCIICharacter]);
+                    }
                 }
-                //imageText.Append("\r\n");
 
                 if (i % 2 == 0)
                 {
                     imageText.Append("\r\n");
                 }
             }
-            return imageText;
+            return imageText.ToString();
         }
     }
 }
