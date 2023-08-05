@@ -29,13 +29,17 @@ namespace ASCII_Art
                 for (int j = 0; j < width; j++)
                 {
                     Color pixel = image.GetPixel(j, i);
-                    int rgb = (pixel.R + pixel.G + pixel.B) / 3;
+                    int lightness = (Math.Max(Math.Max(pixel.R, pixel.G), pixel.B) + Math.Min(Math.Min(pixel.R, pixel.G), pixel.B)) / 2;
+                    int average = (pixel.R + pixel.G + pixel.B) / 3;
+                    int luminosity = (int)(0.21 * pixel.R + 0.72 * pixel.G + 0.07 * pixel.B);
                     // calculating the gray factor of the pixel
-                    Color gray = Color.FromArgb(rgb, rgb, rgb);
+                    Color grayBasedOnAverage = Color.FromArgb(average, average, average);
+                    Color grayBasedOnLightness = Color.FromArgb(lightness, lightness, lightness);
+                    Color grayBasedOnLuminosity = Color.FromArgb(lightness, lightness, luminosity);
 
                     if (i % 2 == 0)
                     {
-                        int indexofASCIICharacter = (gray.R * 10) / 255;
+                        int indexofASCIICharacter = (grayBasedOnLuminosity.R * 10) / 255;
                         imageText.Append(charactersChoice[indexofASCIICharacter]);
                     }
                 }

@@ -106,7 +106,6 @@ namespace ASCII_Art
             browser.ForeColor = colorChooser.Color;
             backgroundColorButton.ForeColor = colorChooser.Color;
             textColorButton.ForeColor = colorChooser.Color;
-
         }
 
         private void backgroundColorButton_Click(object sender, EventArgs e)

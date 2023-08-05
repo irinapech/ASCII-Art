@@ -39,7 +39,6 @@
             this.btnSaveAs = new System.Windows.Forms.Button();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.btnConvertToNumbersASCII = new System.Windows.Forms.Button();
-            //this.browser = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // backgroundColorButton
@@ -48,7 +47,7 @@
             this.backgroundColorButton.Name = "backgroundColorButton";
             this.backgroundColorButton.Size = new System.Drawing.Size(156, 69);
             this.backgroundColorButton.TabIndex = 7;
-            this.backgroundColorButton.Text = "button2";
+            this.backgroundColorButton.Text = "Change Background Color";
             this.backgroundColorButton.UseVisualStyleBackColor = true;
             this.backgroundColorButton.Click += new System.EventHandler(this.backgroundColorButton_Click);
             // 
@@ -89,11 +88,12 @@
             this.textPath.Name = "textPath";
             this.textPath.Size = new System.Drawing.Size(971, 26);
             this.textPath.TabIndex = 1;
-            //
+            // 
             // browser
-            //
-            this.browser.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            // 
+            this.browser.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
+            this.browser.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.browser.Location = new System.Drawing.Point(297, 57);
             this.browser.MinimumSize = new System.Drawing.Size(30, 31);
@@ -131,7 +131,6 @@
             this.Controls.Add(this.backgroundColorButton);
             this.Controls.Add(this.textColorButton);
             this.Controls.Add(this.btnConvertToNumbersASCII);
-            //this.Controls.Add(this.browser);
             this.Controls.Add(this.textPath);
             this.Controls.Add(this.btnBrowse);
             this.Controls.Add(this.btnConvertToASCII);
