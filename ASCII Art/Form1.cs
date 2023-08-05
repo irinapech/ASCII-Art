@@ -75,7 +75,7 @@ namespace ASCII_Art
             btnConvertToASCII.Enabled = false;
             Bitmap image = new Bitmap(textPath.Text, true);
             image = ChangeImageSize(image, image.Width);
-            Content = monochromaticASCII.ConvertToMonochromaticAscii(image);
+            Content = monochromaticASCII.ConvertToMonochromaticAscii(image, "Average");
             browser.DocumentText = "<pre>" + Content + "</pre>";
             btnConvertToASCII.Enabled = true;
         }
@@ -123,6 +123,30 @@ namespace ASCII_Art
             this.BackColor = colorChooser.Color;
             browser.BackColor = colorChooser.Color;
             backgroundColorButton.BackColor = colorChooser.Color;
+        }
+
+        private void BtnChangeLightness_Click(object sender, EventArgs e)
+        {
+            MonochromaticASCII monochromaticASCII = new MonochromaticASCII();
+
+            btnConvertToASCII.Enabled = false;
+            Bitmap image = new Bitmap(textPath.Text, true);
+            image = ChangeImageSize(image, image.Width);
+            Content = monochromaticASCII.ConvertToMonochromaticAscii(image, "Lightness");
+            browser.DocumentText = "<pre>" + Content + "</pre>";
+            btnConvertToASCII.Enabled = true;
+        }
+
+        private void BtnChangeLuminosity(object sender, EventArgs e)
+        {
+            MonochromaticASCII monochromaticASCII = new MonochromaticASCII();
+
+            btnConvertToASCII.Enabled = false;
+            Bitmap image = new Bitmap(textPath.Text, true);
+            image = ChangeImageSize(image, image.Width);
+            Content = monochromaticASCII.ConvertToMonochromaticAscii(image, "Luminosity");
+            browser.DocumentText = "<pre>" + Content + "</pre>";
+            btnConvertToASCII.Enabled = true;
         }
     }
 }

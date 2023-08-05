@@ -17,7 +17,7 @@ namespace ASCII_Art
         {
         }
 
-        public string ConvertToMonochromaticAscii(Bitmap image)
+        internal string ConvertToMonochromaticAscii(Bitmap image, string mode)
         {
             StringBuilder imageText = new StringBuilder();
 
@@ -29,17 +29,26 @@ namespace ASCII_Art
                 for (int j = 0; j < width; j++)
                 {
                     Color pixel = image.GetPixel(j, i);
-                    int lightness = (Math.Max(Math.Max(pixel.R, pixel.G), pixel.B) + Math.Min(Math.Min(pixel.R, pixel.G), pixel.B)) / 2;
-                    int average = (pixel.R + pixel.G + pixel.B) / 3;
-                    int luminosity = (int)(0.21 * pixel.R + 0.72 * pixel.G + 0.07 * pixel.B);
+                    int colorValue = 0;
+                    switch (mode)
+                    {
+                        case "Lightness":
+                            colorValue = (Math.Max(Math.Max(pixel.R, pixel.G), pixel.B) + Math.Min(Math.Min(pixel.R, pixel.G), pixel.B)) / 2;
+                            break;
+                        case "Average":
+                            colorValue = (pixel.R + pixel.G + pixel.B) / 3;
+                            break;
+                        case "Luminosity":
+                            colorValue = (int)(0.21 * pixel.R + 0.72 * pixel.G + 0.07 * pixel.B);
+                            break;
+
+                    }
                     // calculating the gray factor of the pixel
-                    Color grayBasedOnAverage = Color.FromArgb(average, average, average);
-                    Color grayBasedOnLightness = Color.FromArgb(lightness, lightness, lightness);
-                    Color grayBasedOnLuminosity = Color.FromArgb(lightness, lightness, luminosity);
+                    Color gray = Color.FromArgb(colorValue, colorValue, colorValue);
 
                     if (i % 2 == 0)
                     {
-                        int indexofASCIICharacter = (grayBasedOnLuminosity.R * 10) / 255;
+                        int indexofASCIICharacter = (gray.R * 10) / 255;
                         imageText.Append(charactersChoice[indexofASCIICharacter]);
                     }
                 }

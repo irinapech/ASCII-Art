@@ -60,6 +60,7 @@
     <Compile Include="MonochromaticASCII.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="MonochromaticASCIILightness.cs" />
     <Compile Include="NumbersASCII.cs">
       <SubType>Form</SubType>
     </Compile>
