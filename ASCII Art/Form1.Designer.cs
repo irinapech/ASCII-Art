@@ -1,6 +1,6 @@
 ﻿namespace ASCII_Art
 {
-    partial class Parent
+    partial class Form1
     {
         /// <summary>
         /// Required designer variable.
@@ -27,7 +27,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         /// 
-        public void InitializeComponent()
+        protected void InitializeComponent()
         {
             this.btnConvertToASCII = new System.Windows.Forms.Button();
             this.btnBrowse = new System.Windows.Forms.Button();
@@ -153,9 +153,9 @@
             this.btnInvertBrightness.TabIndex = 12;
             this.btnInvertBrightness.Text = "Invert Brightness";
             this.btnInvertBrightness.UseVisualStyleBackColor = true;
-            this.btnInvertBrightness.Click += new System.EventHandler(this.btnInvertBrightness_Click);
+            this.btnInvertBrightness.Click += new System.EventHandler(this.BtnInvertBrightness_Click);
             // 
-            // Parent
+            // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -173,7 +173,7 @@
             this.Controls.Add(this.btnConvertToASCII);
             this.Controls.Add(this.btnSaveAs);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Name = "Parent";
+            this.Name = "Form1";
             this.Text = "ASCII ART";
             this.TransparencyKey = System.Drawing.Color.RosyBrown;
             this.Load += new System.EventHandler(this.Form_Load);
@@ -182,16 +182,14 @@
 
         }
 
-
-
         #endregion
 
-        public System.Windows.Forms.Button btnConvertToASCII;
+        private System.Windows.Forms.Button btnConvertToASCII;
         private System.Windows.Forms.Button btnBrowse;
         private System.Windows.Forms.Button btnSaveAs;
-        public System.Windows.Forms.TextBox textPath;
+        private System.Windows.Forms.TextBox textPath;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
-        public System.Windows.Forms.WebBrowser browser;
+        private System.Windows.Forms.WebBrowser browser;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
         private System.Windows.Forms.Button btnConvertToNumbersASCII;
         private System.Windows.Forms.Button btnChangeLightness;

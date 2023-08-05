@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ASCII_Art
 {
-    public class NumbersASCII : Parent
+    public class NumbersASCII : Form1
     {
         private string[] numbersChoice = { "2", "2", "3", "3", "1", "1", "5", "5", "7", "7", "6", "6", "9", "9", "4", "4", "8", "8", "0", "0", ".", ".", "nbsp;" } ;
 

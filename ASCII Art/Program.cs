@@ -13,7 +13,7 @@ public class Program
     {
         Application.EnableVisualStyles();
         Application.SetCompatibleTextRenderingDefault(false);
-        Application.Run(new ASCII_Art.Parent());
+        Application.Run(new ASCII_Art.Form1());
     }
 }
 

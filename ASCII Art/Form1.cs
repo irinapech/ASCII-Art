@@ -6,9 +6,9 @@ using System.Windows.Forms;
 
 namespace ASCII_Art
 {
-    public partial class Parent : System.Windows.Forms.Form
+    public partial class Form1 : System.Windows.Forms.Form
     {
-        public Parent()
+        public Form1()
         {
             InitializeComponent();
         }
@@ -19,16 +19,21 @@ namespace ASCII_Art
 
         protected string Content { get; set; }
 
-        internal void BtnBrowse_Click(object sender, EventArgs e)
+        private void BtnBrowse_Click(object sender, EventArgs e)
         {
-            DialogResult diag = openFileDialog.ShowDialog();
-            if (diag == DialogResult.OK)
+            this.openFileDialog.Filter = "Images (*.JPG;*.PNG)|*.JPG;*.PNG|" + "All files (*.*)|*.*";
+
+            this.openFileDialog.Multiselect = true;
+            this.openFileDialog.Title = "Select Photos";
+
+            DialogResult dr = this.openFileDialog.ShowDialog();
+            if (dr == System.Windows.Forms.DialogResult.OK)
             {
                 textPath.Text = openFileDialog.FileName;
             }
         }
 
-        protected void BtnSaveAs_Click(object sender, EventArgs e)
+        private void BtnSaveAs_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
 
@@ -76,7 +81,7 @@ namespace ASCII_Art
         private void BtnConvertToNumbersASCII_Click(object sender, EventArgs e)
         {
             NumbersASCII numbersASCII = new NumbersASCII();
-            
+
             btnConvertToNumbersASCII.Enabled = false;
             Bitmap image = new Bitmap(textPath.Text, true);
             Content = numbersASCII.ConvertToNumbersASCII(image).ToString();
@@ -109,7 +114,7 @@ namespace ASCII_Art
         }
 
         private void BtnChangeBrowserBackgroundColor_Click(object sender, EventArgs e)
-        {   
+        {
             btnChangeBrowserBackgroundColor.Enabled = false;
             DialogResult colors = colorDialog.ShowDialog();
             if (colors == DialogResult.OK)
@@ -132,7 +137,7 @@ namespace ASCII_Art
             btnChangeBrowserTextColor.Enabled = true;
         }
 
-        private void btnInvertBrightness_Click(object sender, EventArgs e)
+        private void BtnInvertBrightness_Click(object sender, EventArgs e)
         {
             btnInvertBrightness.Enabled = false;
             Britghness britghness = new Britghness();
