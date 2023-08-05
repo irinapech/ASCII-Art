@@ -10,11 +10,12 @@ namespace ASCII_Art
 
         public NumbersASCII() 
         {
+            InitializeComponent();
         }
 
         ~NumbersASCII() { }
 
-        public StringBuilder ConvertToNumbersASCII(Bitmap image)
+        internal StringBuilder ConvertToNumbersASCII(Bitmap image)
         {
             StringBuilder imageText = new StringBuilder();
 
@@ -27,7 +28,6 @@ namespace ASCII_Art
                 {
                     Color pixel = image.GetPixel(j, i);
                     int rgb = (pixel.R + pixel.G + pixel.B) / 3;
-                    // calculating the gray factor of the pixel
                     Color gray = Color.FromArgb(rgb, rgb, rgb);
 
                     if (i % 2 == 0)

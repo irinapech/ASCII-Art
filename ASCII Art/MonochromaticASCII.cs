@@ -44,7 +44,6 @@ namespace ASCII_Art
                             break;
 
                     }
-                    // calculating the gray factor of the pixel
                     Color gray = Color.FromArgb(colorValue, colorValue, colorValue);
 
                     if (i % 2 == 0)

@@ -17,9 +17,9 @@ namespace ASCII_Art
         {
         }
 
-        public string Content { get; set; }
+        protected string Content { get; set; }
 
-        public void BtnBrowse_Click(object sender, EventArgs e)
+        internal void BtnBrowse_Click(object sender, EventArgs e)
         {
             DialogResult diag = openFileDialog.ShowDialog();
             if (diag == DialogResult.OK)
@@ -28,7 +28,7 @@ namespace ASCII_Art
             }
         }
 
-        public void BtnSaveAs_Click(object sender, EventArgs e)
+        protected void BtnSaveAs_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
 
@@ -41,10 +41,6 @@ namespace ASCII_Art
                 if (saveFileDialog.FilterIndex == 1)
                 {
                     Content = Content.Replace("nbsp;", " ");
-                }
-                else
-                {
-                    Content = "<pre>" + Content + "</pre>";
                 }
                 StreamWriter sw = new StreamWriter(saveFileDialog.FileName);
                 sw.Write(Content);
@@ -77,14 +73,14 @@ namespace ASCII_Art
             btnConvertToASCII.Enabled = true;
         }
 
-        public void BtnConvertToNumbersASCII_Click(object sender, EventArgs e)
+        private void BtnConvertToNumbersASCII_Click(object sender, EventArgs e)
         {
             NumbersASCII numbersASCII = new NumbersASCII();
             
             btnConvertToNumbersASCII.Enabled = false;
             Bitmap image = new Bitmap(textPath.Text, true);
             Content = numbersASCII.ConvertToNumbersASCII(image).ToString();
-            browser.DocumentText = "<pre>" + Content + "</pre>";
+            browser.DocumentText = Content;
             btnConvertToNumbersASCII.Enabled = true;
         }
 
@@ -96,7 +92,7 @@ namespace ASCII_Art
             Bitmap image = new Bitmap(textPath.Text, true);
             image = ChangeImageSize(image, image.Width);
             Content = monochromaticASCII.ConvertToMonochromaticAscii(image, "Lightness");
-            browser.DocumentText = "<pre>" + Content + "</pre>";
+            browser.DocumentText = Content;
             btnChangeLightness.Enabled = true;
         }
 
@@ -108,7 +104,7 @@ namespace ASCII_Art
             Bitmap image = new Bitmap(textPath.Text, true);
             image = ChangeImageSize(image, image.Width);
             Content = monochromaticASCII.ConvertToMonochromaticAscii(image, "Luminosity");
-            browser.DocumentText = "<pre>" + Content + "</pre>";
+            browser.DocumentText = Content;
             btnChangeLuminosity.Enabled = true;
         }
 
